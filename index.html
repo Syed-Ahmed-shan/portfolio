@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f4c3180df4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/Ahmed.png" class="logo
+                ">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="colsemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer </p>
+                <h1>Hi, I'am <span>Ahmed</span><br> Syed From India</h1>
+            </div>
+        </div>
+    </div>
+    
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/mine.png" alt="no-load-img">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-ttitle">About Me</h1>
+                    <!--- this is about information of me -->
+                    <p> Passionate and dedicated student seeking an internship in an organization focused on continuous learning. Proficient in
+                        C,SQL,Python,and Java,with strong  expertise in Data Structures and Algorithms. Eager to contribute to organizational
+                        advancement while pursuing personal and professional growth..</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Internship')">Internship</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <p class="tab-links" onclick="opentab('Interest')">Interest</p>
+
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>C</span><br>Proficient in C language</li>
+                            <li><span>JAVA</span><br>Doing Java DSA Course</li>
+                            <li><span>Html5 & CSS3</span><br>Proficient in Html5 and styleing css with reponsive websites </li>
+                            <li><span>Python</span><br>Good in Python and i have some intermidiate skills on it</li>
+                            <li><span>JavaScript</span><br>Very Well know About the JavaScript and I have dome some backend Projects on it</li>
+                            <li><span>SQL</span><br>I have learnt DBMS with SQL a relational Data Base</li>
+                            <li><span>Tools</span><br>Spyder ,VSCode , Git</li>
+                            <li><span>Operating System</span><br>Linux , Windows</li>
+                                 
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Internship">
+                        <ul>
+                            <li><span>ProdigyInfoTech </span><br>
+                               <h3> I have done my Internship at ProdigyInfoTech on Web Development by using these Skills</h3><br>
+                                Html<br>
+                                CSS<br>
+                                JavaScript  
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>SSC Complition (2019-20) </span><br>
+                                School : Indian High School<br>
+                            Grade : 9.8%
+                        
+                            </li>
+                            <li><span>PUC Completion (2020-22)</span><br>College Name : Bharathi Juniour College<br>
+                            Grade : 8.7%</li>
+                            
+                        </ul>
+                    </div>
+                        <div class="tab-contents" id="Interest">
+                            <ul>
+                                <li><span>Gaining Skills I'm Interested In</span><br>
+                                   <h3> I possess a strong foundation in various technical domains, yet I constantly seek opportunities to learn and grow. Whether it's mastering a new programming language, exploring cutting-edge frameworks, or delving into the intricacies of user experience design, I approach each new subject with enthusiasm and determination. </h3><br>
+                                    UX/UI<br>
+                                    App Development<br>
+                                    Full-Stack  Etc..
+                            </ul>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--- this is services information of me -->
+     <div id="Projects">
+        <div class="container">
+            <h1 class="sub-ttitle">Projects</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <h2>Stop Watch</h2>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione eligendi itaque quaerat odit nam voluptatum, cupiditate dicta omnis est sapiente aperiam provident. Suscipit delectus saepe vitae numquam animi molestias?</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h2>Tic-Tac-Toe</h2>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione eligendi itaque quaerat odit nam voluptatum, cupiditate dicta omnis est sapiente aperiam provident. Suscipit delectus saepe vitae numquam animi molestias?</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-regular fa-paste"></i>
+                    <h2>Sample-Exam-Web</h2>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione eligendi itaque quaerat odit nam voluptatum, cupiditate dicta omnis est sapiente aperiam provident. Suscipit delectus saepe vitae numquam animi molestias?</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-smog"></i>
+                    <h2>Weather-App</h2>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione eligendi itaque quaerat odit nam voluptatum, cupiditate dicta omnis est sapiente aperiam provident. Suscipit delectus saepe vitae numquam animi molestias?</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+     </div>
+     <!---Portfolio meraa baa aa -->
+     <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-ttitle">Internship</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work.jpg">
+                    <div class="layer">
+                        <h3>
+                            Weather App</h3>
+                            <p>
+                                This will show you the weather of any country with the exact one and with the cool Interface 
+                            </p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work2.jpg">
+                    <div class="layer">
+                        <h3>
+                            Tic-Tac-Toe 
+                        </h3>
+                            <p>
+                                This ia a cool Interface tic tac toe gaming app
+                            </p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work3.jpg">
+                    <div class="layer">
+                        <h3>
+                            Stop-Watch</h3>
+                            <p>
+                                This is a stop watch with  cool Interface and neon lights
+                            </p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </div>
+    <!--Contact Information-->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-ttitle">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>ahmedsyed200326@gmail.com</p>
+                    <p><i class="fa-solid fa-phone-volume"></i>Phone number : 8019262003</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/Hammuking01/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/hammu_cute_king/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ahmed-syed-31a60a271/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://x.com/AhmedSy10358340"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="text" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Ahmed Syed. Made with <i class="fa-solid fa-heart"></i> By Ahmed</p>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+    <script>
+        var sidemeu =  document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemeu.style.right = "0";
+        }
+        function colsemenu(){
+            sidemeu.style.right = "-200px";
+        }
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxChF682PKvybmGo_Qb14gIqD80VdUIx8k8fne3lyPI0EmviKoC9ZeemNKX1uxqnhr_/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent Successfully !"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html> 
