@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stopwatch</title>
+<style>
+
+        h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        position: absolute;
+        top: 20px; /* Adjust this value as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        text-decoration: underline;
+        }
+    body {
+        background-image: url("https://images.unsplash.com/photo-1585241645927-c7a8e5840c42?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D");
+        font-family: Arial, sans-serif;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #0000007a;
+        color: white;
+       background-size: cover;
+        }
+    .container {
+        background-color: #000000b4;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow:4px 4px 4px 8px rgba(226, 39, 39, 0.551);
+        border: solid #f80000;
+
+    }
+    .container1{
+        box-shadow:4px 4px 4px 8px  rgba(211, 205, 205, 0.474);
+        background-color: #000000b4;
+        border-radius: 10px;
+        padding: 40px;
+        border: 5px solid #4e4c4f;
+    }
+  
+    h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        position: absolute;
+        top: 20px; /* Adjust this value as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        padding: 10px 20px; /* Padding for better appearance */
+      
+        border: 2px solid #6420AA; /* Border style */
+       
+        border-radius: 10px; /* Border radius */
+        background-color: #424040; /* Background color */
+        box-shadow:4px 4px 4px 3px #a870df;
+    }
+      
+       
+    
+    .stopwatch {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2px;
+    }
+    button {
+        font-size: 1.2em;
+        padding: 12px 24px;
+        margin: 0 10px;
+        cursor: pointer;
+        border: ridge;
+        border-radius: 5px;
+        background-color: #4c4b47;
+        color: white;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #ebaf6f76;
+    }
+    .lap-times {
+        text-align: center;
+    }
+    .lap-times div {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+    <h1  style="color: white;">StopWatch</h1>
+
+    <div class="container1">
+    
+
+<div class="container">
+    <div class="stopwatch">00:00:00</div>
+    <div class="button-container">
+        <button id="startStopButton" onclick="startStop()">Start</button>
+        <button onclick="reset()">Reset</button>
+        <button onclick="recordLapTime()">Lap</button>
+    </div>
+    <div class="lap-times" id="lapTimes"></div>
+</div>
+
+<script>
+    let timer; // Timer variable
+    let isRunning = false; // Flag to track if stopwatch is running
+    let lapCount = 1; // Variable to track lap count
+    let lapTimes = []; // Array to store lap times
+
+    function startStop() {
+        if (isRunning) {
+            clearInterval(timer);
+            document.getElementById("startStopButton").textContent = "Start";
+        } else {
+            timer = setInterval(updateStopwatch, 1000);
+            document.getElementById("startStopButton").textContent = "Stop";
+        }
+        isRunning = !isRunning;
+    }
+
+    function updateStopwatch() {
+        let stopwatchDisplay = document.querySelector(".stopwatch");
+        let time = stopwatchDisplay.textContent.split(":");
+        let hours = parseInt(time[0]);
+        let minutes = parseInt(time[1]);
+        let seconds = parseInt(time[2]);
+
+        seconds++;
+
+        if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes >= 60) {
+                minutes = 0;
+                hours++;
+            }
+        }
+
+        stopwatchDisplay.textContent = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
+    }
+
+    function pad(number) {
+        return (number < 10 ? "0" : "") + number;
+    }
+
+    function reset() {
+        clearInterval(timer);
+        document.querySelector(".stopwatch").textContent = "00:00:00";
+        isRunning = false;
+        document.getElementById("startStopButton").textContent = "Start";
+        lapCount = 1;
+        lapTimes = [];
+        document.getElementById("lapTimes").textContent = "";
+    }
+
+    function recordLapTime() {
+        let lapTime = document.querySelector(".stopwatch").textContent;
+        lapTimes.push("Lap " + lapCount + ": " + lapTime);
+        lapCount++;
+        updateLapTimesDisplay();
+    }
+
+    function updateLapTimesDisplay() {
+        let lapTimesDisplay = document.getElementById("lapTimes");
+        lapTimesDisplay.innerHTML = "";
+        lapTimes.forEach(function (lap) {
+            let lapElement = document.createElement("div");
+            lapElement.textContent = lap;
+            lapTimesDisplay.appendChild(lapElement);
+        });
+    }
+    
+</script>
+</body>
+</html>
